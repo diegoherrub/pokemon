@@ -18,6 +18,7 @@ class PokemonMockRemoteDataSource {
     )
 
     fun getPokemon(pokemonId: String): Pokemon? {
+        pokemons.sortedBy { pokemonId }
         return pokemons.firstOrNull { pokemon ->
             pokemon.id == pokemonId
         }
