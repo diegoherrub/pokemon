@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.github.glide)
     implementation(libs.google.gson)
+    implementation(libs.viewmodel.scope)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
