@@ -15,16 +15,16 @@ class PokemonsViewModel(
     private val getPokemonsUseCase: GetPokemonsUseCase
 ): ViewModel() {
 
-    private val _uiSatate = MutableLiveData<UiState>()
-    val uiState: LiveData<UiState> = _uiSatate
+    private val _uiState = MutableLiveData<UiState>()
+    val uiState: LiveData<UiState> = _uiState
 
     fun viewCreated(){
-        _uiSatate.value = (UiState(isLoading = true))
+        _uiState.value = (UiState(isLoading = true))
 
         viewModelScope.launch(Dispatchers.IO) {
             val pokemons = getPokemonsUseCase.invoke()
             delay(5000)
-            _uiSatate.postValue(UiState(pokemons = pokemons))
+            _uiState.postValue(UiState(pokemons = pokemons))
         }
     }
 
